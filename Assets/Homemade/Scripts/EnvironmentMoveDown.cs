@@ -1,10 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class EnvironmentMoveDown : MonoBehaviour
 {
+    private Rigidbody rb;
+    private void Start()
+    {
+        rb = this.GetComponent<Rigidbody>();
+    }
+
     private void FixedUpdate()
     {
         Transform thisTransform = this.transform;
@@ -18,6 +25,6 @@ public class EnvironmentMoveDown : MonoBehaviour
         {
             newPosition.y -= 1;
         }
-        thisTransform.position = newPosition;
+        rb.MovePosition(newPosition);
     }
 }

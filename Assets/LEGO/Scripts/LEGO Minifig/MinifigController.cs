@@ -248,7 +248,6 @@ namespace Unity.LEGO.Minifig
             {
                 return;
             }
-
             // Handle input.
             if (inputEnabled)
             {

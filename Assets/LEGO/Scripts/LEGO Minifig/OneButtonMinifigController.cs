@@ -80,13 +80,13 @@ namespace Unity.LEGO.Minifig
             [Tooltip("The direction to rotate.")]
             public RotationDirection rotateDirection = RotationDirection.TurnRight;
 
-            [Range(0.0f, 50f), Tooltip("The speed in units per second.")]
+            [Range(0.0f, 10000f), Tooltip("The speed in units per second.")]
             public uint moveMaxSpeed = 10;
             [Tooltip("The distance in LEGO modules.")]
             public uint moveDistance = 10;
-            [Range(1.0f, 60.0f)]
+            [Range(1.0f, 10000f)]
             public uint moveAcceleration = 20;
-            [Range(0.0f, 720.0f), Tooltip("The speed in degrees per second.")]
+            [Range(0.0f, 100000f), Tooltip("The speed in degrees per second.")]
             public uint rotateSpeed = 180;
             [Tooltip("The angle in degrees.")]
             public uint rotateAngle = 90;
@@ -162,7 +162,7 @@ namespace Unity.LEGO.Minifig
             {
                 return;
             }
-
+            PlaySpecialAnimation(SpecialAnimation.CrawlOnWallRight);
             // Handle input.
             if (inputEnabled)
             {
